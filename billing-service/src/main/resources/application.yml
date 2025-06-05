@@ -1,14 +1,14 @@
 server:
-  port: 8084
+  port: 8083
 
 spring:
   application:
-    name: appointment-service
+    name: billing-service
   cloud:
     compatibility-verifier:
-      enabled: false  # Deshabilita la verificación de compatibilidad
+      enabled: false
   datasource:
-    url: jdbc:mysql://localhost:3306/veterinary_appointments?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/veterinary_billing?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
     username: root
     password:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -18,7 +18,7 @@ spring:
     show-sql: true
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQL8Dialect  # Cambio a MySQL8Dialect
+        dialect: org.hibernate.dialect.MySQL8Dialect
         format_sql: true
 
 eureka:
@@ -46,4 +46,4 @@ feign:
 
 logging:
   level:
-    com.example.appointmentservice: DEBUG
+    com.example.billingservice: DEBUG
